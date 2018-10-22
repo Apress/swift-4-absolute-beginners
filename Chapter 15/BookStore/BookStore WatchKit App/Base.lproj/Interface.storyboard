@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13045"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BookStore_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="aua-aR-0D7">
+                            <items>
+                                <tableRow identifier="myBookRow" id="jFP-Ct-c8u" customClass="BookRow" customModule="BookStore_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="tTE-Nc-D8d">
+                                        <items>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="5RH-E6-a0j"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="bookLabel" destination="5RH-E6-a0j" id="xLy-UK-wT6"/>
+                                        <segue destination="66w-Rg-yZb" kind="push" id="eIj-U8-DRH"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="mainTable" destination="aua-aR-0D7" id="69X-eB-agg"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--Detail Controller-->
+        <scene sceneID="JhG-Xw-cP7">
+            <objects>
+                <controller id="66w-Rg-yZb" customClass="DetailController" customModule="BookStore_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="ULk-Od-qPd"/>
+                        <label alignment="left" text="Label" id="fdW-VI-gPp"/>
+                        <label alignment="left" text="Label" id="oTQ-hD-3kl"/>
+                    </items>
+                    <connections>
+                        <outlet property="labelAuthor" destination="fdW-VI-gPp" id="yJ8-66-Ddn"/>
+                        <outlet property="labelDescription" destination="oTQ-hD-3kl" id="a2D-GI-Ngw"/>
+                        <outlet property="labelTitle" destination="ULk-Od-qPd" id="kx5-fp-UGl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="242" y="73"/>
+        </scene>
+    </scenes>
+</document>
