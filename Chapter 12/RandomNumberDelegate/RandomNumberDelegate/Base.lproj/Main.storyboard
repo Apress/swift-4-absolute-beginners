@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZMk-Ft-jAW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomNumberDelegate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="78e-q5-hTP">
+                                <rect key="frame" x="106" y="223" width="163" height="221"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No guesses yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z38-v0-VOk">
+                                        <rect key="frame" x="22.5" y="0.0" width="118" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhF-h1-lXy">
+                                        <rect key="frame" x="60.5" y="60.5" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwR-UB-Gvu">
+                                        <rect key="frame" x="0.0" y="121" width="163" height="30"/>
+                                        <state key="normal" title="Guess Random Number"/>
+                                        <connections>
+                                            <segue destination="Xf6-PD-yHs" kind="show" identifier="MyGuessSegue" id="lwv-C4-ZHS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNJ-so-cwy">
+                                        <rect key="frame" x="42" y="191" width="79" height="30"/>
+                                        <state key="normal" title="Play Again?"/>
+                                        <connections>
+                                            <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="STu-M8-ONF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="78e-q5-hTP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6rG-WG-5Zl"/>
+                            <constraint firstItem="78e-q5-hTP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p5L-4c-LFl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="G1X-DT-bud"/>
+                    <connections>
+                        <outlet property="guessButton" destination="uwR-UB-Gvu" id="g5O-1L-PRg"/>
+                        <outlet property="playAgainButton" destination="MNJ-so-cwy" id="wad-ca-1Ly"/>
+                        <outlet property="resultLabel" destination="LhF-h1-lXy" id="njv-TL-pFs"/>
+                        <outlet property="userGuessLabel" destination="z38-v0-VOk" id="7wg-dj-sRx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="541.60000000000002" y="106.59670164917542"/>
+        </scene>
+        <!--Guess Input View Controller-->
+        <scene sceneID="Sh8-H3-Ggg">
+            <objects>
+                <viewController id="Xf6-PD-yHs" customClass="GuessInputViewController" customModule="RandomNumberDelegate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tjX-Ag-Jcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="eZd-0t-g59">
+                                <rect key="frame" x="100" y="253.5" width="175" height="160.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Make a guess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB9-H5-jJM">
+                                        <rect key="frame" x="35" y="0.0" width="105" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number between 0-100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-n3-mlh">
+                                        <rect key="frame" x="0.0" y="60.5" width="175" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imn-jH-hpn">
+                                        <rect key="frame" x="47.5" y="130.5" width="80" height="30"/>
+                                        <state key="normal" title="Save Guess"/>
+                                        <connections>
+                                            <action selector="saveGuess:" destination="Xf6-PD-yHs" eventType="touchUpInside" id="hfW-kQ-zp2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eZd-0t-g59" firstAttribute="centerY" secondItem="tjX-Ag-Jcw" secondAttribute="centerY" id="7KC-uc-6U2"/>
+                            <constraint firstItem="eZd-0t-g59" firstAttribute="centerX" secondItem="tjX-Ag-Jcw" secondAttribute="centerX" id="bYj-EU-OyD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DvQ-He-f3f"/>
+                    </view>
+                    <connections>
+                        <outlet property="guessLabel" destination="FB9-H5-jJM" id="afa-En-WMx"/>
+                        <outlet property="guessTextField" destination="dEc-n3-mlh" id="Ndu-we-m4x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDd-sl-4Xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k84-JA-i1V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZMk-Ft-jAW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MQL-sr-gyR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6VX-F2-jb7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8m4-W3-a8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="107.94602698650675"/>
+        </scene>
+    </scenes>
+</document>
